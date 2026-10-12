@@ -1,0 +1,20 @@
+{
+  "title": "PostRole",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "parent_role_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false
+}

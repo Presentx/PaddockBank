@@ -1,0 +1,35 @@
+{
+  "title": "PatchMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 255,
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+?[0-9() -]{8,20}$"
+    },
+    "pix_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 77
+    },
+    "role_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

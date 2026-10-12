@@ -1,0 +1,43 @@
+{
+  "title": "PostMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "document_number": {
+      "type": "string",
+      "pattern": "^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$"
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 255,
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+?[0-9() -]{8,20}$"
+    },
+    "pix_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 77
+    },
+    "role_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    }
+  },
+  "required": [
+    "name",
+    "document_number",
+    "email",
+    "phone",
+    "pix_key",
+    "role_key"
+  ],
+  "additionalProperties": false
+}

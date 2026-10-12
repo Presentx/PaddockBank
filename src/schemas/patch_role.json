@@ -1,0 +1,21 @@
+{
+  "title": "PatchRole",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "parent_role_key": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 36
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

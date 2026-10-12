@@ -1,0 +1,23 @@
+{
+  "title": "PatchSubsystem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "budget": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100000000000
+    },
+    "owner_role_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

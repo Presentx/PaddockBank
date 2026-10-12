@@ -1,0 +1,32 @@
+{
+  "title": "PostLoan",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100000000000
+    },
+    "installments": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "idempotency_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    }
+  },
+  "required": [
+    "amount",
+    "installments",
+    "purpose",
+    "idempotency_key"
+  ],
+  "additionalProperties": false
+}

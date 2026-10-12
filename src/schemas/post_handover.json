@@ -1,0 +1,26 @@
+{
+  "title": "PostHandover",
+  "type": "object",
+  "properties": {
+    "incoming_member_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    },
+    "outgoing_role_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 36
+    },
+    "idempotency_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    }
+  },
+  "required": [
+    "incoming_member_key",
+    "outgoing_role_key",
+    "idempotency_key"
+  ],
+  "additionalProperties": false
+}

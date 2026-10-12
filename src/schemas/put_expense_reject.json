@@ -1,0 +1,15 @@
+{
+  "title": "PutExpenseReject",
+  "type": "object",
+  "properties": {
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "reason"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+{
+  "title": "PatchAccount",
+  "type": "object",
+  "properties": {
+    "plan": {
+      "type": "string",
+      "enum": [
+        "FREE",
+        "PRO"
+      ]
+    }
+  },
+  "required": [
+    "plan"
+  ],
+  "additionalProperties": false
+}

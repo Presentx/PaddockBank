@@ -1,0 +1,64 @@
+{
+  "title": "PostTeam",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "university": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "finance_role_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "treasurer": {
+      "title": "Treasurer",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "document_number": {
+          "type": "string",
+          "pattern": "^\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}$"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 255,
+          "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?[0-9() -]{8,20}$"
+        },
+        "pix_key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 77
+        }
+      },
+      "required": [
+        "name",
+        "document_number",
+        "email",
+        "phone",
+        "pix_key"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "university",
+    "treasurer"
+  ],
+  "additionalProperties": false
+}
