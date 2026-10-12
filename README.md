@@ -463,37 +463,7 @@ o mesmo. Nenhuma mensagem de erro repete CPF, CNPJ ou e-mail.
 
 ---
 
-## 9. Onde o código precisou decidir além da RFC
-
-A RFC é o contrato; estes são os pontos em que ela não descia ao
-detalhe, e o que o código fez:
-
-- **Erros de infraestrutura.** A RFC cataloga os erros de negócio. Rota
-  inexistente, método não aceito e erro inesperado ganharam
-  `PDK-GEN-404`, `PDK-GEN-405` e `PDK-GEN-500`, no mesmo padrão.
-- **`request_id` com 64 caracteres.** O diagrama diz `char(36)`, mas o
-  base-service aceita um `X-Request-ID` recebido de até 64. As colunas
-  são `VARCHAR(64)`, para que um identificador válido nunca vire 500.
-- **Taxa em pontos-base.** O crédito devolve `monthly_rate_bps` (350 =
-  3,5%), e não um `monthly_rate` fracionário: nenhum número da API
-  viaja como float. As parcelas vêm em `installment_list`, porque
-  `installments` já é a quantidade.
-- **Ids escritos em `expense_status`.** O índice único parcial da nota
-  fiscal precisa citar os status `PENDING` e `PAID` por número; por isso
-  os ids dessa tabela são escritos no `INSERT`, e não gerados.
-- **Saldo médio com o dia de hoje.** A janela de 90 dias inclui hoje, e
-  o saldo de um dia é o de fechamento.
-- **Responsável inativo** recebe `422 PDK-MEMB-005` em qualquer rota
-  com sessão, não só nas duas em que a RFC o destaca.
-- **A recusa exige `reason`**, para que o histórico diga por quê.
-- **Fora do escopo, como na RFC:** autenticação do usuário final,
-  liquidação PIX e DICT, consulta de CNPJ na Receita, cobrança da
-  mensalidade Pro, o agendador em si, renegociação de crédito, exclusões
-  e encerramento de conta.
-
----
-
-## 10. A licença
+## 9. A licença
 
 **MIT**, herdada do projeto base — o arquivo `LICENSE` acompanha o
 código.
